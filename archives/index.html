@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>归档-Albums</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+<!-- 
+<script src="/js/gitalk.min.js"></script>
+ -->
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"></head>
+
+	<body>
+		
+
+    
+    
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										主页
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										人物
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+							<li class="select">
+								<a href="/archives">
+									归档
+								</a>
+								<span class="dot"></span>
+							</li>
+							
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>Warren</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">主页</a>
+        </li>
+        
+        <li>
+            <a href="/categories">人物</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href="/archives">归档</a>
+        </li>
+        
+    </ul>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					width: "66%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					width: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+    
+
+
+
+<div class="archive">
+    
+        <div class="header-body-background">
+    <!-- <div class="header-body-background-content">
+        <h1>一共创建了 71 个相册!</h1>
+    </div> -->
+</div>
+    
+    <div class="archive-content" id="content">
+        <div class="archive-content-data">
+            <div class="grouping">
+    
+        <p>
+            2022
+        </p>
+        
+        <a href="/2022/09/25/eee5f0ab0ea7/">
+            <span>[DJAWA] Bikini Vacation</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c3374539101f/">
+            <span>[DJAWA] Christmas Special 2021</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/651bec766689/">
+            <span>[DJAWA] Backout Queen Misa</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/fc1a9a204994/">
+            <span>[Korean Realgraphic] No.09</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/4e5629815feb/">
+            <span>[JOApictures] YEEUN x JOA 20. APR vol.2</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/6778c5aefa62/">
+            <span>[Loozy] double date yeeun</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/1c37e96316cd/">
+            <span>[JOApictures] YEEUN x JOA 20. APR vol.1</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/4c3609ee11fc/">
+            <span>[Loozy] cs part-timer</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c5a38adc89c1/">
+            <span>[DJAWA] A Snap of Intimacy</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c0aa32d47e8f/">
+            <span>[Loozy] cheer up</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/8d0309942aaf/">
+            <span>[DJAWA] Triangle Soldier</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/abbccf2360be/">
+            <span>[LEEHEE EXPRESS] LEDB-038</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/4fe787897f89/">
+            <span>[DJAWA] Cyber Hunter Mitsuri</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/6f745307f1ca/">
+            <span>[DJAWA] The Demon Slayer</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/70ec0f0260ed/">
+            <span>[DJAWA] Cute Pink</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c4515e86a5e5/">
+            <span>[BLUECAKE] Reverse Bunny Girl</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/fd15a8babadc/">
+            <span>[Loozy] full of s</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c4fb2cd3c05f/">
+            <span>[Pure Media] Vol.95</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/1274b944c6e1/">
+            <span>[BLUECAKE] REDHOOD SM</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/ba4b9c0b249d/">
+            <span>[Pure Media] Vol.84</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/7ef699adb961/">
+            <span>[BLUECAKE] Play Game</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/cbffb9fe2349/">
+            <span>[DJAWA] Swimming Lessons #6</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/e1f478412b06/">
+            <span>[Pure Media] Vol.78</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c408c6f26124/">
+            <span>[BLUECAKE] Pink Oni</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/7c5db5effdcc/">
+            <span>[Pure Media] Vol.70</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/0455405a7637/">
+            <span>[DJAWA] Strawbeery Girl</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/980fec3c0107/">
+            <span>[Pure Media] Vol.60</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/486d0f009432/">
+            <span>[Pure Media] Vol.127</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/209bf78b2f3e/">
+            <span>[DJAWA] Staycation #5</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/d6704eebc0a3/">
+            <span>[Pure Media] Vol.114</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/51b8a03ac890/">
+            <span>[DJAWA] Staycation #4</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/9288ded08093/">
+            <span>[BLUECAKE] NOTHING</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/74ede4645483/">
+            <span>[Loozy] where are my tools</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/9bdf8881e709/">
+            <span>[Loozy] travel partner &quot;gwangalli&quot;</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/82cc2530891c/">
+            <span>[DJAWA] Romantic Winter Glamping</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c22b465f20ed/">
+            <span>[Loozy] The Queen is Back</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c681cc764aa2/">
+            <span>[BLUECAKE] Marin Yetagawa WHITE ver</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c028b11c11f5/">
+            <span>[DJAWA] Retro Gaming Girl</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/6e88337b9988/">
+            <span>[BLUECAKE] IN THE SEXXY 002</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/2233a8346607/">
+            <span>[Loozy] tainted love bar</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/22677fbbd7b6/">
+            <span>[BLUECAKE] Hardcore Gambling</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/2e5c22ee35d5/">
+            <span>[Loozy] SM CarXXX</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/f7783b948557/">
+            <span>[Loozy] Officegirls Vacation Vol.2</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/47e26af907d1/">
+            <span>[BLUECAKE] Code 002 Mini</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/061796b8a108/">
+            <span>[BLUECAKE] Bunny LuXXX</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/ce73e99da1b6/">
+            <span>[DJAWA] Naughty Trekking</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c5e430669751/">
+            <span>[Loozy] nudy painter</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/04d67e0215e8/">
+            <span>[Loozy] Maximum Vol.2</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/10e16e48159f/">
+            <span>[Loozy] Maximum Vol.1</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/8d6f5012e9ab/">
+            <span>[DJAWA] Naughty Supervisor</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/2a5a007fa34d/">
+            <span>[Loozy] Lover in Hotel</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/1217e045d612/">
+            <span>[DJAWA] Knotting Class #6</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/c2ecf6cce763/">
+            <span>[BLUECAKE] Black Rose</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/6af31ee9c377/">
+            <span>[Loozy] librarian girl</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/173ab025dc95/">
+            <span>[DJAWA] Holidays in Eden</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/f78d8bf9fcf5/">
+            <span>[BLUECAKE] 2B</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/49f3a66e7725/">
+            <span>[Loozy] hardcore</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/f9a18326a78d/">
+            <span>[DJAWA] D.s Relationship</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/df26816ea53c/">
+            <span>[ArtGravia] Vol.173</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/1eb521f60bdf/">
+            <span>[Loozy] gisheng</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/25/a132a9b27fce/">
+            <span>[ArtGravia] Vol.168</span>
+            <time>09-25</time>
+        </a>
+        
+        <a href="/2022/09/24/ac841bb2cd46/">
+            <span>[Pure Media] Vol.170</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/61174c5b893c/">
+            <span>[Pure Media] Vol.159</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/1c070b927ea6/">
+            <span>[Pure Media] Vol.73</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/1f75258c2b8c/">
+            <span>[Pure Media] Vol.46</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/bbaaf4dbe2c5/">
+            <span>[Pure Media] Vol.86</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/7eeaf456394d/">
+            <span>[Pure Media] Vol.79</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/d4e8b403f47e/">
+            <span>[Pure Media] Vol.56</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/c355dfcf98d2/">
+            <span>[Pure Media] Vol.37</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/69587458e87f/">
+            <span>[DJAWA] Ganyu Succubus</span>
+            <time>09-24</time>
+        </a>
+        
+        <a href="/2022/09/24/b6f6727c583a/">
+            <span>[DJAWA] Self Satisfaction #2</span>
+            <time>09-24</time>
+        </a>
+        
+        
+</div>
+        </div>
+    </div>    
+</div>
+
+
+
+
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By Warren.
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 3,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(e){e.imageLazyLoadSetting.processImages=t;var n=e.imageLazyLoadSetting.isSPA,i=e.imageLazyLoadSetting.preloadRatio||1,r=o();function o(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){n&&(r=o());for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(e.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];e=function(){r=r.filter(function(t){return o!==t})},(t=o).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,t.removeAttribute("data-original"),e&&e()},t.src!==i&&(n.src=i))}()}function a(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",a),e.addEventListener("resize",a),e.addEventListener("orientationchange",a)}(this);</script></body>
+</html>
+

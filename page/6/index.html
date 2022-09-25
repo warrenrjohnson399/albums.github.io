@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>相册-Albums</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+<!-- 
+<script src="/js/gitalk.min.js"></script>
+ -->
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+							<li class="select">
+								<a href="/">
+									主页
+								</a>
+								<span class="dot"></span>
+							</li>
+							
+									
+						
+								<li>
+									<a href="/categories">
+										人物
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										归档
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>Warren</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">主页</a>
+        </li>
+        
+        <li>
+            <a href="/categories">人物</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href="/archives">归档</a>
+        </li>
+        
+    </ul>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					width: "66%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					width: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="home">
+	<div class="header-body-background">
+    <!-- <div class="header-body-background-content">
+        <h1>相册</h1>
+    </div> -->
+</div>
+	<div class="main">
+		
+			<div class="post-card" id="content">
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/ce73e99da1b6/">
+							<h2 class="post-card-title">
+								[DJAWA] Naughty Trekking
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/a3/34/Fjyv4g71_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/c5e430669751/">
+							<h2 class="post-card-title">
+								[Loozy] nudy painter
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/13/95/NzimCaIo_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/04d67e0215e8/">
+							<h2 class="post-card-title">
+								[Loozy] Maximum Vol.2
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/f4/1f/hAIBd4VV_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/8d6f5012e9ab/">
+							<h2 class="post-card-title">
+								[DJAWA] Naughty Supervisor
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/37/39/xh17yigm_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/10e16e48159f/">
+							<h2 class="post-card-title">
+								[Loozy] Maximum Vol.1
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/44/39/Er7hfpql_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/2a5a007fa34d/">
+							<h2 class="post-card-title">
+								[Loozy] Lover in Hotel
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/6e/6d/c2wHjCkS_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/1217e045d612/">
+							<h2 class="post-card-title">
+								[DJAWA] Knotting Class #6
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/ca/80/inuIuJEG_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/c2ecf6cce763/">
+							<h2 class="post-card-title">
+								[BLUECAKE] Black Rose
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/5f/8d/jaesPOSq_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a href="/2022/09/25/6af31ee9c377/">
+							<h2 class="post-card-title">
+								[Loozy] librarian girl
+							</h2>
+							
+								<img src="https://thumbs2.imgbox.com/6e/22/2lDd3Ml7_t.jpg" alt="Quiet">
+							
+						</a>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<div class="info-auth">
+									
+										<a href="/categories/Yeeny/" target="_blank" >Yeeny</a>
+								   
+								</div>
+								<div class="info-data">
+									2022-09-25
+								</div>
+							</div>
+							<!-- <div class="meat-type"></div> -->
+						</div>
+					</div>
+				
+			</div>
+		
+		
+	
+	</div>
+	<div class="change-page">
+		
+			<div class="p-page">
+				<a href="/page/5/">
+					<div class="previous">
+						上一页
+					</div>
+				</a>
+			</div>
+			
+				
+					<div class="n-page">
+						<a href="/page/7/">
+							<div class="next">
+								下一页
+							</div>
+						</a>
+					</div>
+					
+	</div>
+	
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By Warren.
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 3,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(e){e.imageLazyLoadSetting.processImages=t;var n=e.imageLazyLoadSetting.isSPA,i=e.imageLazyLoadSetting.preloadRatio||1,r=o();function o(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){n&&(r=o());for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(e.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];e=function(){r=r.filter(function(t){return o!==t})},(t=o).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,t.removeAttribute("data-original"),e&&e()},t.src!==i&&(n.src=i))}()}function a(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",a),e.addEventListener("resize",a),e.addEventListener("orientationchange",a)}(this);</script></body>
+</html>
+
